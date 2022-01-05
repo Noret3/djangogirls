@@ -11,6 +11,10 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = "публикацию"
+        verbose_name_plural = "публикации"
+
     def get_absolute_url(self):
         return reverse('post_detail', kwargs={'pk': self.pk})
 
