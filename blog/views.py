@@ -19,7 +19,7 @@ class PostDetailView(DetailView):
 
 
 class CreatePostView(CreateView):
-    fields = ['title', 'text']
+    # fields = ['title', 'text']
 
     def post(self, request, *args, **kwargs):
         form = PostForm(request.POST)
@@ -34,3 +34,8 @@ class CreatePostView(CreateView):
         return Post.objects.all()
 
     template_name = 'blog/post_edit.html'
+
+
+# class CreatePostView(CreateView):
+#     form_class = PostForm
+#     template_name = 'blog/post_edit.html'
